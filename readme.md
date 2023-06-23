@@ -106,7 +106,7 @@ Para este paso necesitaremos conocer la IP de la maquina, pondremos
 ```bash
 ip addr show
 ```
-![Alt text](images\image-8.png)
+![Alt text](images/image-8.png)
 En este caso la IP de **Spark_Master_Node** es **192.168.1.12**
 
 Ejecutamos en Master
