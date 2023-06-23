@@ -126,7 +126,7 @@ start-master.sh
 ![Alt text](images/image-9.png)
 
 ## Verificar funcionamiento de nodo maestro (solo Master Node)
-En el buscador ponemos la direccion ip del servidor y nos aparece una interfaz web que indica si todo esta bien configurado , em este caso ponemos
+En el buscador ponemos la direccion ip del servidor y nos aparece una interfaz web que indica si todo esta bien configurado , en este caso ponemos
 ```bas
 http://192.168.1.12:8080/
 ```
