@@ -63,7 +63,7 @@
 Las maquinas vituales son **Spark_Master_Node** y **Spark_Worker_Node1**
 ![Alt text](images/image-1.png)
 Posterior verifiacremos sus adaptadores de red, primero de **Spark_Master_Node**
-![Alt text](images\image-2.png)
+![Alt text](images/image-2.png)
 Y luego de **Spark_Worker_Node1**
 ![Alt text](images/image-3.png)
 Esto para que cada maquina virtual tenga su propia IP
@@ -73,13 +73,13 @@ Para cambiar el nombre del Host se debe ejecutar en consola:
 ```bash
 hostnamectl set-hostname worker1
 ```
-![Alt text](images\image-4.png)
+![Alt text](images/image-4.png)
 
 ## Verificar variables de entorno en ambos nodos:
 Primero en **Spark_Master_Node**
-![Alt text](images\image-5.png)
+![Alt text](images/image-5.png)
 Luego en **Spark_Worker_Node1**
-![Alt text](images\image-6.png)
+![Alt text](images/image-6.png)
 
 Y  ejecutamos para verificar
 ```bash
@@ -99,14 +99,14 @@ export SPARK_WORKER_CORES=2
 export SPARK_WORKER_MEMORY=2g
 export SPARK_WORKER_PORT=8888
 ```
-![Alt text](images\image-7.png)
+![Alt text](images/image-7.png)
 
 ## Verificar o crear archivo de configuración de Spark (solo Master Node)
 Para este paso necesitaremos conocer la IP de la maquina, pondremos
 ```bash
 ip addr show
 ```
-![Alt text](images\image-8.png)
+![Alt text](images/image-8.png)
 En este caso la IP de **Spark_Master_Node** es **192.168.1.12**
 
 Ejecutamos en Master
@@ -123,14 +123,14 @@ Ejecutamos
 ```bas
 start-master.sh
 ```
-![Alt text](images\image-9.png)
+![Alt text](images/image-9.png)
 
 ## Verificar funcionamiento de nodo maestro (solo Master Node)
 En el buscador ponemos la direccion ip del servidor y nos aparece una interfaz web que indica si todo esta bien configurado , em este caso ponemos
 ```bas
 http://192.168.1.12:8080/
 ```
-![Alt text](images\image-10.png)
+![Alt text](images/image-10.png)
 
 ## Iniciar nodo worker en maquina clonada (solo Worker Node)
 En **Spark_Worker_Node1** podremos este comadno 
@@ -138,4 +138,4 @@ En **Spark_Worker_Node1** podremos este comadno
 start-worker.sh spark://192.168.1.12:7077
 ```
 
-![Alt text](images\image-11.png)
+![Alt text](images/image-11.png)
