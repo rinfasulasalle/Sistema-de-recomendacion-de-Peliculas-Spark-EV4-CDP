@@ -3,7 +3,7 @@
         <theader>
         <tr>
             <th>
-            <img src="https://github.com/rescobedoulasalle/git_github/blob/main/ulasalle.png?raw=true" alt="EPIS" style="width:50%; height:auto"/>
+            <img src="https://github.com/rescobedoulasalle/git_github/blob/main/ulasalle.png?raw=true" alt="EPIS" style="width:90%; height:auto"/>
             </th>
             <th>
             <span style="font-weight:bold;">UNIVERSIDAD LA SALLE</span><br />
@@ -24,34 +24,37 @@
     </theader>
     <tbody>
         <tr>
-        <td>ALUMNO:</td>
-        <td>Roger Infa Sanchez</td>
+            <td>ALUMNO:</td>
+            <td>Roger Infa Sanchez</td>
         </tr>
         <tr>
-        <td>CURSO:</td>
-        <td>Sistema de recomendación de Películas Spark</td>
+            <td>CURSO:</td>
+            <td>Sistema de recomendación de Películas Spark</td>
         </tr>
         <tr>
-        <td colspan="2">RECURSOS:</td>
+            <td>DOCENTE:</td>
+            <td>Renzo Mauricio Rivera Zavala  - rzavalar@ulasalle.edu.pe</td>
         </tr>
         <tr>
-        <td colspan="2">
-            <ul>
-            <li><a href="https://sparkbyexamples.com/pyspark/spark-submit-python-file/?expand_article=1">How to Spark Submit Python | PySpark File (.py)?</a></li>
-            <li><a href="https://spark.apache.org/docs/latest/">Documentacion de Spark</a></li>
-            <li><a href="https://github.com/rescobedoulasalle/git_github/blob/main/ulasalle.png?raw=true">Logo La Salle de @rescobedo</a></li>
-            </ul>
-        </td>
+            <td>TAREA:</td>
+            <td>Sistema de recomendación de Películas Spark </td>
         </tr>
         <tr>
-        <td colspan="2">DOCENTE:</td>
+            <td>DESCRIPCION:</td>
+            <td>Crear una aplicación Spark que genere un sistema de recomendación de películas mediante el filtrado colaborativo. La aplicación debería poder recomendar películas a los usuarios en función de sus clasificaciones de películas.</td>
         </tr>
         <tr>
-        <td colspan="2">
-            <ul>
-            <li>Renzo Mauricio Rivera Zavala  - rzavalar@ulasalle.edu.pe</li>
-            </ul>
-        </td>
+            <td colspan="2">RECURSOS:</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <ul>
+                <li><a href="https://sparkbyexamples.com/pyspark/spark-submit-python-file/?expand_article=1">How to Spark Submit Python | PySpark File (.py)?</a></li>
+                <li><a href="https://spark.apache.org/docs/latest/">Documentacion de Spark</a></li>
+                <li><a href="https://github.com/rescobedoulasalle/git_github/blob/main/ulasalle.png?raw=true">Logo La Salle</a></li>
+                <li> Maquina Virtual proporcionada mediante Clasroom.
+                </ul>
+            </td>
         </tr>
     </tbody>
 </table>
