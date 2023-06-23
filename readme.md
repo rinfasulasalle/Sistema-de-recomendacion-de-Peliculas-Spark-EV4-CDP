@@ -29,11 +29,11 @@
         </tr>
         <tr>
             <td>CURSO:</td>
-            <td>Sistema de recomendación de Películas Spark</td>
+            <td>Computación Distribuida y Paralela</td>
         </tr>
         <tr>
             <td>DOCENTE:</td>
-            <td>Renzo Mauricio Rivera Zavala  - rzavalar@ulasalle.edu.pe</td>
+            <td>Renzo Mauricio Rivera Zavala  - rriveraz@ulasalle.edu.pe</td>
         </tr>
         <tr>
             <td>TAREA:</td>
