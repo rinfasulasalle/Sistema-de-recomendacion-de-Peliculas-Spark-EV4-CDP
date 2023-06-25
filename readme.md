@@ -244,5 +244,6 @@ Luego, se entrena el modelo ALS llamando a la función **train_als_model** con l
 A continuación, se define un ejemplo de recomendaciones para un usuario específico. El ID del usuario se puede proporcionar como argumento de línea de comandos, de lo contrario, se utiliza un valor predeterminado. Se llama a la función **recommend_movies** para obtener las recomendaciones y se imprimen en pantalla.
 
 Finalmente, se detiene la sesión de Spark llamando al método stop().
-Este es el codigo completo.
+Este es el codigo completo:
+
 ![Alt text](images/code.png)
