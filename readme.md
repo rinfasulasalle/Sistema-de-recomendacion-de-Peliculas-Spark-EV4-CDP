@@ -25,7 +25,7 @@
     <tbody>
         <tr>
             <td>ALUMNO:</td>
-            <td>Roger Infa Sanchez y .</td>
+            <td>Roger Infa Sanchez y Frank Duarte Oruro</td>
         </tr>
         <tr>
             <td>CURSO:</td>
@@ -247,3 +247,5 @@ Finalmente, se detiene la sesión de Spark llamando al método stop().
 Este es el codigo completo:
 
 ![Alt text](images/code.png)
+
+## Codigo en python para la recomendación
