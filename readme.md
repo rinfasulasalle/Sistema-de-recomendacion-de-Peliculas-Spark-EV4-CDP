@@ -25,7 +25,7 @@
     <tbody>
         <tr>
             <td>ALUMNO:</td>
-            <td>Roger Infa Sanchez</td>
+            <td>Roger Infa Sanchez y .</td>
         </tr>
         <tr>
             <td>CURSO:</td>
