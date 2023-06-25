@@ -281,3 +281,14 @@ Cuando ejecuto este comando, Spark toma el control y se encarga de iniciar la ap
 Se obtienen los siguientes resultados:
 
 ![Alt text](images\image-15.png)
+y debería botarnos una salida asi:
+
+```bash
+RMSE: 0.9254
+Recomendaciones para el usuario 1:
++------+-------------------------------------------------------------+
+|userId|recommendations                                              |
++------+-------------------------------------------------------------+
+|1     |[[123, 4.871237], [456, 4.765342], [789, 4.623581], [234, 4.598743], [567, 4.519275]]|
++------+-------------------------------------------------------------+
+```
