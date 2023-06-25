@@ -179,7 +179,6 @@ from pyspark.sql import SparkSession
 from pyspark.ml.evaluation import RegressionEvaluator
 from pyspark.ml.recommendation import ALS
 from pyspark.sql.functions import col
-import sys
 
 def load_movie_data(spark, filepath):
     return spark.read.csv(filepath, header=True, inferSchema=True)
@@ -202,6 +201,7 @@ def evaluate_model(model, test_data):
     evaluator = RegressionEvaluator(metricName="rmse", labelCol="rating", predictionCol="prediction")
     rmse = evaluator.evaluate(predictions)
     return rmse
+
 ```
 
 La función **evaluate_model** evalúa el rendimiento del modelo entrenado utilizando un conjunto de datos de prueba. Primero, se generan predicciones para el conjunto de prueba utilizando el modelo. Luego, se utiliza un evaluador de regresión (**RegressionEvaluator**) para calcular la métrica de evaluación, en este caso, el RMSE (Root Mean Square Error).
@@ -228,13 +228,15 @@ if __name__ == "__main__":
     rmse = evaluate_model(model, test_data)
     print(f"RMSE: {rmse}")
 
-    user_id = int(sys.argv[1]) if len(sys.argv) > 1 else 1
+    user_id = 1  # Reemplaza '1' con el ID del usuario deseado
     num_recommendations = 5
     recommendations = recommend_movies(model, user_id, num_recommendations)
 
+    # Imprimir las recomendaciones para el usuario
     print(f"Recomendaciones para el usuario {user_id}:")
     recommendations.show(truncate=False)
 
+    # Detener la sesión de Spark
     spark.stop()
 ```
 
