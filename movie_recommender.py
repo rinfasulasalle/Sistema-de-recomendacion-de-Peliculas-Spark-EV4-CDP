@@ -4,13 +4,11 @@ from pyspark.ml.recommendation import ALS
 from pyspark.sql.functions import col
 import sys
 
-
 def load_movie_data(spark, filepath):
     """
     Carga los datos de películas desde un archivo CSV utilizando Spark y retorna un DataFrame.
     """
     return spark.read.csv(filepath, header=True, inferSchema=True)
-
 
 def train_als_model(data):
     """
@@ -20,7 +18,6 @@ def train_als_model(data):
     als = ALS(userCol="userId", itemCol="movieId", ratingCol="rating", coldStartStrategy="drop")
     model = als.fit(data)
     return model
-
 
 def evaluate_model(model, test_data):
     """
@@ -32,7 +29,6 @@ def evaluate_model(model, test_data):
     rmse = evaluator.evaluate(predictions)
     return rmse
 
-
 def recommend_movies(model, user_id, num_recommendations):
     """
     Genera recomendaciones de películas para un usuario específico.
@@ -40,7 +36,6 @@ def recommend_movies(model, user_id, num_recommendations):
     """
     user_recs = model.recommendForUserSubset(user_id, num_recommendations)
     return user_recs
-
 
 if __name__ == "__main__":
     # Crear una sesión de Spark

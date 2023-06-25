@@ -170,3 +170,79 @@ Y lo compromabos en el master node
 ![Alt text](images/image.-11.png)
 
 Aparece como worker
+
+## Codigo en python para la recomendación
+
+```python
+from pyspark.sql import SparkSession
+from pyspark.ml.evaluation import RegressionEvaluator
+from pyspark.ml.recommendation import ALS
+from pyspark.sql.functions import col
+import sys
+
+def load_movie_data(spark, filepath):
+    return spark.read.csv(filepath, header=True, inferSchema=True)
+```
+
+En estas primeras líneas, se importan las clases y funciones necesarias de la biblioteca PySpark para el procesamiento de datos distribuidos y recomendaciones. Además, se importa el módulo sys para obtener argumentos de línea de comandos. La función **load_movie_data** carga los datos de películas desde un archivo CSV utilizando Spark y retorna un DataFrame.
+
+```python
+def train_als_model(data):
+    als = ALS(userCol="userId", itemCol="movieId", ratingCol="rating", coldStartStrategy="drop")
+    model = als.fit(data)
+    return model
+```
+
+La función **train_als_model** entrena un modelo ALS (Alternating Least Squares) utilizando los datos de películas proporcionados. Se crea una instancia de **ALS** especificando las columnas correspondientes a los usuarios, películas y clasificaciones, y se ajusta el modelo a los datos de entrada.
+
+```python
+def evaluate_model(model, test_data):
+    predictions = model.transform(test_data)
+    evaluator = RegressionEvaluator(metricName="rmse", labelCol="rating", predictionCol="prediction")
+    rmse = evaluator.evaluate(predictions)
+    return rmse
+```
+
+La función **evaluate_model** evalúa el rendimiento del modelo entrenado utilizando un conjunto de datos de prueba. Primero, se generan predicciones para el conjunto de prueba utilizando el modelo. Luego, se utiliza un evaluador de regresión (**RegressionEvaluator**) para calcular la métrica de evaluación, en este caso, el RMSE (Root Mean Square Error).
+
+```python
+def recommend_movies(model, user_id, num_recommendations):
+    user_recs = model.recommendForUserSubset(user_id, num_recommendations)
+    return user_recs
+```
+
+La función **recommend_movies** genera recomendaciones de películas para un usuario específico utilizando el modelo entrenado. Se utiliza el método recommendForUserSubset para obtener las principales recomendaciones para el usuario especificado y se retorna un DataFrame con las recomendaciones.
+
+```python
+
+if __name__ == "__main__":
+    spark = SparkSession.builder.appName("MovieRecommender").getOrCreate()
+
+    movie_data = load_movie_data(spark, "movies.csv")
+
+    (training_data, test_data) = movie_data.randomSplit([0.8, 0.2])
+
+    model = train_als_model(training_data)
+
+    rmse = evaluate_model(model, test_data)
+    print(f"RMSE: {rmse}")
+
+    user_id = int(sys.argv[1]) if len(sys.argv) > 1 else 1
+    num_recommendations = 5
+    recommendations = recommend_movies(model, user_id, num_recommendations)
+
+    print(f"Recomendaciones para el usuario {user_id}:")
+    recommendations.show(truncate=False)
+
+    spark.stop()
+```
+
+En el bloque principal del programa, se crea una sesión de Spark utilizando **SparkSession**. A continuación, se carga el conjunto de datos de películas desde un archivo CSV utilizando la función **load_movie_data**. Los datos se dividen en conjuntos de entrenamiento y prueba.
+
+Luego, se entrena el modelo ALS llamando a la función **train_als_model** con los datos de entrenamiento. El rendimiento del modelo se evalúa utilizando la función **evaluate_model** en los datos de prueba y se imprime el valor del RMSE.
+
+A continuación, se define un ejemplo de recomendaciones para un usuario específico. El ID del usuario se puede proporcionar como argumento de línea de comandos, de lo contrario, se utiliza un valor predeterminado. Se llama a la función **recommend_movies** para obtener las recomendaciones y se imprimen en pantalla.
+
+Finalmente, se detiene la sesión de Spark llamando al método stop().
+Este es el codigo completo.
+![Alt text](images/code.png)
