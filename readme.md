@@ -167,7 +167,8 @@ start-worker.sh spark://192.168.1.12:7077
 ![Alt text](images/image-11.png)
 
 Y lo compromabos en el master node
-![Alt text](images/image.-11.png)
+
+![Alt text](images/image-12.png)
 
 Aparece como worker
 
@@ -249,3 +250,34 @@ Este es el codigo completo:
 ![Alt text](images/code.png)
 
 ## Ejecucion Codigo en Spark_Worker_Node1
+
+Para ejecutarlo hay que ir a la carpeta donde esta guardado y veremos quye ahi tengo mi dataset **movies.cvs**
+![Alt text](images/image-13.png)
+
+crearé con **nano** el archivo **movie_recommender.py**
+
+```bash
+nano movie_recommender.py
+```
+
+![Alt text](images\image-14.png)
+
+Guardamos el archivo y se habrá creado exitosamente, con **ls** nos deberia boar una salida así:
+
+```bash
+user@worker1:~/ev4$ ls
+movie_recommender.py  movies.csv
+```
+
+Ahora al ejecutar el comando
+
+```bash
+spark-submit movie_recommender.py
+```
+
+se está utilizando la utilidad de línea de comandos **spark-submit** de Apache Spark para enviar y ejecutar el archivo **movie_recommender.py** en el entorno de Spark.
+
+Cuando ejecuto este comando, Spark toma el control y se encarga de iniciar la aplicación **MovieRecommender**. Dentro del archivo **movie_recommender.py**.
+Se obtienen los siguientes resultados:
+
+![Alt text](images\image-15.png)
