@@ -262,7 +262,7 @@ crearé con **nano** el archivo **movie_recommender.py**
 nano movie_recommender.py
 ```
 
-![Alt text](images\image-14.png)
+![Alt text](images/image-14.png)
 
 Guardamos el archivo y se habrá creado exitosamente, con **ls** nos deberia boar una salida así:
 
@@ -282,7 +282,7 @@ se está utilizando la utilidad de línea de comandos **spark-submit** de Apache
 Cuando ejecuto este comando, Spark toma el control y se encarga de iniciar la aplicación **MovieRecommender**. Dentro del archivo **movie_recommender.py**.
 Se obtienen los siguientes resultados:
 
-![Alt text](images\image-15.png)
+![Alt text](images/image-15.png)
 y debería botarnos una salida asi:
 
 ```bash
